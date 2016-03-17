@@ -17,12 +17,15 @@ public class InMobiUI : MonoBehaviour
 		float width = ( Screen.width >= 960 || Screen.height >= 960 ) ? 600 : 500;
 		float height = ( Screen.width >= 960 || Screen.height >= 960 ) ? 60 : 55;
 		float heightPlus = height + 10.0f;
+
+		yPos += heightPlus;
+		
 		if( GUI.Button( new Rect( xPos, yPos, width, height ), "Initialize" ) )
 		{
 			var dict = new Dictionary<string,string> ();
-			dict.Add ("age", "20");
+			dict.Add ("age", "10");
 			dict.Add ("gender", "GENDER_MALE");
-			InMobiAndroid.init ("17d9fc3c57fd4864bd9c4ef55cb12481", dict);			
+			InMobiAndroid.init ("01c705db77264c6e84de7fd7400ee7e3", dict);			
 		}
 		
 		
