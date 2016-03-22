@@ -4,78 +4,78 @@ using InMobiMiniJSON;
 
 public class InMobiUI : MonoBehaviour
 {
-	#if UNITY_ANDROID
+#if UNITY_ANDROID
 
 	void OnGUI()
 	{
-		
+
 		float yPos = 5.0f;
 		float xPos = 5.0f;
-		float width = ( Screen.width >= 960 || Screen.height >= 960 ) ? 600 : 500;
-		float height = ( Screen.width >= 960 || Screen.height >= 960 ) ? 60 : 55;
+		float width = (Screen.width >= 960 || Screen.height >= 960) ? 600 : 500;
+		float height = (Screen.width >= 960 || Screen.height >= 960) ? 60 : 55;
 		float heightPlus = height + 10.0f;
-		if( GUI.Button( new Rect( xPos, yPos, width, height ), "Initialize" ) )
+		if (GUI.Button(new Rect(xPos, yPos, width, height), "Initialize"))
 		{
-			var dict = new Dictionary<string,string> ();
-			dict.Add ("age", "20");
-			dict.Add ("gender", "GENDER_MALE");
+			var dict = new Dictionary<string, string>();
+			dict.Add("age", "20");
+			dict.Add("gender", "GENDER_MALE");
 	InMobiAndroid.init ("4028cb8b2c3a0b45012c406824e800ba",dict);			
 		}
-		
-		
-		if( GUI.Button( new Rect( xPos, yPos += heightPlus, width, height ), "Set Log Level to Debug" ) )
+
+
+		if (GUI.Button(new Rect(xPos, yPos += heightPlus, width, height), "Set Log Level to Debug"))
 		{
-			InMobiAndroid.setLogLevel (InMobiLogLevel.Verbose);
+			InMobiAndroid.setLogLevel(InMobiLogLevel.Verbose);
 		}
 
-		
-		if( GUI.Button( new Rect( xPos, yPos += heightPlus, width, height ), "Create Banner (320x50) centered" ) )
+
+		if (GUI.Button(new Rect(xPos, yPos += heightPlus, width, height), "Create Banner (320x50) centered"))
 		{
-			var dict = new Dictionary<string,string> ();
-			dict.Add("hi","hello2");
+			var dict = new Dictionary<string, string>();
+			dict.Add("hi", "hello2");
 	InMobiAndroid.createBanner (1456867900075,"ban1" ,InMobiAdPosition.Centered, 320, 50, 30,"test1,test2,test3",dict );
 
-			
+
 		}
-		
-		if( GUI.Button( new Rect( xPos, yPos += heightPlus, width, height ), "Load Banner (320x50) centered" ) )
+
+		if (GUI.Button(new Rect(xPos, yPos += heightPlus, width, height), "Load Banner (320x50) centered"))
 		{
 			InMobiAndroid.loadBanner("ban1");
-			
-			
+
+
 		}
-		
-		if( GUI.Button( new Rect( xPos, yPos += heightPlus, width, height ), "Destroy Banner centered " ) )
+
+		if (GUI.Button(new Rect(xPos, yPos += heightPlus, width, height), "Destroy Banner centered "))
 		{
-			InMobiAndroid.destroyBanner ("ban1");
+			InMobiAndroid.destroyBanner("ban1");
 		}
 
 
 
-		if( GUI.Button( new Rect( xPos, yPos += heightPlus, width, height ), "Load Interstitial1" ) )
+		if (GUI.Button(new Rect(xPos, yPos += heightPlus, width, height), "Load Interstitial1"))
 		{
-			var dict = new Dictionary<string,string> ();
-			dict.Add("hi","hello");
-			InMobiAndroid.loadInterstitial(1456867900075,"interstitial1","test1",dict);
+			var dict = new Dictionary<string, string>();
+			dict.Add("hi", "hello");
+			InMobiAndroid.loadInterstitial(1458202348495, "interstitial1", "test1", dict);
 		}
-		
-		if( GUI.Button( new Rect( xPos, yPos += heightPlus, width, height ), "Is Interstitial1 Ready" ) )
+
+		if (GUI.Button(new Rect(xPos, yPos += heightPlus, width, height), "Is Interstitial1 Ready"))
 		{
-			if(InMobiAndroid.getInterstitialState("interstitial1") == true)
+			if (InMobiAndroid.getInterstitialState("interstitial1") == true)
 				Debug.Log("Interstitial1 is Ready");
 			else
 				Debug.Log("Interstitial1 is not Ready");
 		}
-		
-		if( GUI.Button( new Rect( xPos, yPos += heightPlus, width, height ), "show Interstitial1" ) )
+
+		if (GUI.Button(new Rect(xPos, yPos += heightPlus, width, height), "show Interstitial1"))
 		{
 			InMobiAndroid.showInterstitial("interstitial1");
 		}
-		
 
 
-	}	
-		#endif	
-	
+
+	}
+#endif
+
 
 }
