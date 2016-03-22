@@ -6,4 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/InMobiAndroid/demo/InMobiTestScene.unity
+    path: Assets/StartScript.unity
+  - enabled: 1
+    path: Assets/Plugins/InMobiAndroid/demo/InMobiTestScene.unity
